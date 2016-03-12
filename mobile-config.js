@@ -33,5 +33,5 @@ App.icons({
 //     'android_xhdpi_landscape': 'resources/splash/splash-1280x720.png'
 // });
 
-// App.setPreference('StatusBarOverlaysWebView', 'false');
+App.setPreference('StatusBarOverlaysWebView', 'false');
 // App.setPreference('StatusBarBackgroundColor', '#000000');
