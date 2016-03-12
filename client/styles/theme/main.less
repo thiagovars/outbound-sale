@@ -1,0 +1,85 @@
+@import './variables.import.less';
+@import './mixins.import.less';
+@import './tables.import.less';
+@import './labels.import.less';
+@import './buttons.import.less';
+@import './theme-modal.import.less';
+
+#main {
+    font-family: arial;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: arial;
+    }
+
+    img:first-child {
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 290px;
+        margin-top: 25px;
+        margin-bottom: 30px;
+    }
+
+    .page-header {
+        margin-top: 20px;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    a.btn:hover {
+        text-decoration: none;
+    }
+
+    label.control-label {
+        padding-bottom: 5px;
+    }
+}
+
+.page-home {
+    .stats {
+        text-align: center;
+
+        .stats-icon {
+        }
+
+        span {
+            display: block;
+            margin-top: 20px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .lnk {
+            position: absolute;
+            top: 14px;
+            right: 31px;
+        }
+    }
+
+    .panel-body {
+        text-align: center;
+
+        strong {
+            font-weight: bold;
+        }
+    }
+}
+
+.page-clientes-form {
+    .btn-voltar {
+        .btn; 
+        /*.btn-info;*/
+        /*.btn-circle;*/
+    }
+
+    .btn-salvar {
+        .btn;
+        .btn-primary;
+        .btn-large;
+    }
+}

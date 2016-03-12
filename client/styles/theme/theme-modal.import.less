@@ -1,0 +1,44 @@
+@import '../bootstrap/modals.import.less';
+
+.modal, .modal-open {
+    &.fade {
+        max-width: 560px;
+        position: fixed;
+        margin: 0;
+        left:0;
+
+        &.in {
+            top: 3%;
+        }
+    }
+
+    .modal-header {
+        h3 { margin:0 ;}
+        .close {
+            margin-top: 0px;
+        }
+    }
+    .modal-body {
+        legend { font-size: 13px; font-weight: bold;}
+    }
+
+    .dropdown-menu {
+        z-index: 99999;
+    }
+
+    .modal-footer {
+        .container-fluid {
+            padding:0;
+        }
+        .row-fluid {
+            margin:0;
+        }
+
+        .footer-btn {
+            text-align: right;
+        }
+        .footer-lnk {
+            text-align: left;
+        }
+    }
+}

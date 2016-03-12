@@ -1,0 +1,317 @@
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #4d4d4d;
+@grayLight:             #6C6C6C;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+
+// Accent colors
+// -------------------------
+@white:                 #fff;
+@blue:                  #0088CC;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+
+// Scaffolding
+// -------------------------
+@htmlBody:              #BDBDBD;
+@bodyBackground:        @white;
+@textColor:             @grayDark;
+
+
+// Links
+// -------------------------
+@linkColor:             #08c;
+@linkColorHover:        darken(@linkColor, 15%);
+
+
+// Typography
+// -------------------------
+@baseFontSize:          13px;
+@baseFontColor:         @grayDark;
+@baseFontFamily:        Helvetica, Arial, sans-serif;
+@baseLineHeight:        18px;
+@altFontFamily:         Arial, sans-serif;
+
+@baseIconFont:          iconSweets;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+
+// Tables
+// -------------------------
+@tableBackground:                   transparent; // overall background-color
+@tableBackgroundAccent:             #f9f9f9; // for striping
+@tableBackgroundHover:              #f0f0f0; // #f5f5f5; // for hover
+@tableBorder:                       #ddd; // table and cell border
+
+
+// Buttons
+// -------------------------
+@btnBackground:                     @white;
+@btnBackgroundHighlight:            darken(@white, 10%);
+@btnBorder:                         darken(@white, 20%);
+
+@btnPrimaryBackground:              @linkColor;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 15%);
+
+@btnInfoBackground:                 #5bc0de;
+@btnInfoBackgroundHighlight:        #2f96b4;
+
+@btnSuccessBackground:              #62c462;
+@btnSuccessBackgroundHighlight:     #51a351;
+
+@btnWarningBackground:              lighten(@orange, 15%);
+@btnWarningBackgroundHighlight:     @orange;
+
+@btnDangerBackground:               #ee5f5b;
+@btnDangerBackgroundHighlight:      #bd362f;
+
+@btnInverseBackground:              @gray;
+@btnInverseBackgroundHighlight:     @grayDarker;
+
+
+// Forms
+// -------------------------
+@inputBackground:               @white;
+@inputBorder:                   #ccc;
+@inputDisabledBackground:       @grayLighter;
+
+
+// Dropdowns
+// -------------------------
+@dropdownBackground:            @white;
+@dropdownBorder:                rgba(0,0,0,.2);
+@dropdownLinkColor:             @grayDark;
+@dropdownLinkColorHover:        @white;
+@dropdownLinkBackgroundHover:   @linkColor;
+
+
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+@zindexDropdown:          1000;
+@zindexPopover:           1010;
+@zindexTooltip:           1020;
+@zindexFixedNavbar:       1030;
+@zindexModalBackdrop:     1040;
+@zindexModal:             1050;
+
+
+// Sprite icons path
+// -------------------------
+@iconSpritePath:          "../img/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
+
+
+// Input placeholder text color
+// -------------------------
+@placeholderText:         @grayLight;
+
+
+// Hr border color
+// -------------------------
+@hrBorder:                @grayLighter;
+
+
+// Navbar
+// -------------------------
+@navbarHeight:                    40px;
+@navbarBackground:                @grayDarker;
+@navbarBackgroundHighlight:       @grayDark;
+
+@navbarText:                      @grayLight;
+@navbarLinkColor:                 @grayLight;
+@navbarLinkColorHover:            @white;
+@navbarLinkColorActive:           @navbarLinkColorHover;
+@navbarLinkBackgroundHover:       transparent;
+@navbarLinkBackgroundActive:      @navbarBackground;
+
+@navbarSearchBackground:          lighten(@navbarBackground, 25%);
+@navbarSearchBackgroundFocus:     @white;
+@navbarSearchBorder:              darken(@navbarSearchBackground, 30%);
+@navbarSearchPlaceholderColor:    #ccc;
+
+
+// Hero unit
+// -------------------------
+@heroUnitBackground:              @grayLighter;
+@heroUnitHeadingColor:            inherit;
+@heroUnitLeadColor:               inherit;
+
+
+// Form states and alerts
+// -------------------------
+@warningText:             #c09853;
+@warningBackground:       #fcf8e3;
+@warningBorder:           darken(spin(@warningBackground, -10), 3%);
+
+@errorText:               #b94a48;
+@errorBackground:         #f2dede;
+@errorBorder:             darken(spin(@errorBackground, -10), 3%);
+
+@successText:             #468847;
+@successBackground:       #dff0d8;
+@successBorder:           darken(spin(@successBackground, -10), 5%);
+
+@infoText:                #3a87ad;
+@infoBackground:          #d9edf7;
+@infoBorder:              darken(spin(@infoBackground, -10), 7%);
+
+
+
+
+// GRID
+// --------------------------------------------------
+
+// Default 940px grid
+// -------------------------
+@gridColumns:             12;
+@gridColumnWidth:         60px;
+@gridGutterWidth:         20px;
+@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+
+// Fluid grid
+// -------------------------
+@fluidGridColumnWidth:    6.382978723%;
+@fluidGridGutterWidth:    2.127659574%;
+
+@contentPad:              15px;
+
+
+// Reusables
+.contentPad {
+    padding: @contentPad;
+}
+.box-shadow(){
+    border-bottom:solid 1px #cdd1d3;
+    box-shadow:0px 1px 0px 0px #fff;
+    -webkit-box-shadow:0px 1px 0px 0px #fff;
+    margin-bottom:8px;
+}
+.htmlBody {color: @htmlBody;}
+.bodyBackground {color: @bodyBackground;}
+.textColor{color: @textColor;}
+.linkColor {color: @linkColor;}
+.linkColorHover{color:@linkColorHover;}
+.baseFontSize{font-size: @baseFontSize;}
+.baseFontColor{color:@baseFontColor;}
+.baseFontFamily{font-family: @baseFontFamily;}
+.baseLineHeight{line-height: @baseLineHeight;}
+.well-lg {
+    padding: 24px;
+    border-radius: 6px;
+}
+.well-sm {
+    padding: 9px;
+    border-radius: 3px;
+}
+
+.warningText{color: @warningText;}
+.warningBackground{background-color: @warningBackground;}
+.warningBorder{border-color: @warningBorder;}
+.errorText{color:@errorText;}
+.errorBackground{background-color:@errorBackground;}
+.errorBorder{border-color:@errorBorder;}
+.successText{color:@successText;}
+.successBackground{background-color:@successBackground;}
+.successBorder{border-color:@successBorder;}
+.infoText{color:@infoText;}
+.infoBackground{background-color:@infoBackground;}
+.infoBorder{border-color:@infoBorder;}
+
+.normal {font-weight: normal;}
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.center { text-align: center; }
+.right { &:not(.popover) { text-align: right; } }
+.left { &:not(.popover) { text-align: left; } }
+.justify { &:not(.popover) { text-align: justify; } }
+.t1 { font-size: 0.9em;}
+.t2 { font-size: 1em;}
+.t3 { font-size: 1.4em;}
+.t4 { font-size: 1.8em;}
+.t5 { font-size: 2.2em;}
+.t6 { font-size: 2.6em;}
+
+.black { color: @black;}
+.grayDarker { color: @grayDarker;}
+.grayDark { color: @grayDark;}
+.gray { color: @gray;}
+.grayLight { color: @grayLight;}
+.grayLighter { color: @grayLighter;}
+.white { color: @white;}
+// ---
+.blue { color: @blue;}
+.blueDark { color: @blueDark;}
+.green { color: @green;}
+.red { color: @red;}
+.yellow { color: @yellow;}
+.orange { color: @orange;}
+.pink { color: @pink;}
+.purple { color: @purple;}
+// ---
+.fundo-black { background-color: @black;}
+.fundo-grayDarker { background-color: @grayDarker;}
+.fundo-grayDark { background-color: @grayDark;}
+.fundo-gray { background-color: @gray;}
+.fundo-grayLight { background-color: @grayLight;}
+.fundo-grayLighter { background-color: @grayLighter;}
+.fundo-white { background-color: @white;}
+.fundo-blue { background-color: @blue;}
+.fundo-blueDark { background-color: @blueDark;}
+.fundo-green { background-color: @green;}
+.fundo-red { background-color: @red;}
+.fundo-yellow { background-color: @yellow;}
+.fundo-orange { background-color: @orange;}
+.fundo-pink { background-color: @pink;}
+.fundo-purple { background-color: @purple;}
+
+.lh1 {line-height: 20px;}
+.lh2 {line-height: 24px;}
+.lh3 {line-height: 28px;}
+.lh4 {line-height: 32px;}
+.lh5 {line-height: 36px;}
+
+.mt3 {margin-top:3px;}
+.mt5 {margin-top:5px;}
+.mt8 {margin-top:8px;}
+.mt13 {margin-top:13px;}
+.mt21 {margin-top:21px;}
+.mt34 {margin-top:34px;}
+.mt55 {margin-top:55px;}
+.mb3 {margin-bottom:3px;}
+.mb5 {margin-bottom:5px;}
+.mb8 {margin-bottom:8px;}
+.mb13 {margin-bottom:13px;}
+.mb21 {margin-bottom:21px;}
+.mb34 {margin-bottom:34px;}
+.mb55 {margin-bottom:55px;}
+
+h1, h2, h3, h4, h5, h6 { color: @textColor; font-weight: bold; line-height: 1.25; font-family: @baseFontFamily; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+h1 { .t6; margin-bottom: 12px;}
+h2 { .t5; margin-bottom: 9px; }
+h3 { .t4; margin-bottom: 9px; }
+h4 { .t3; margin-bottom: 3px; }
+h5 { .t2; margin-bottom: 3px; }
+h6 { .t1; }
