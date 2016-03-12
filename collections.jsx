@@ -18,5 +18,11 @@ Meteor.methods({
         },{
             multi: false
         });
+    },
+
+    clientesExcluir: function (clientesId){
+        dados = Clientes.findOne({_id: clientesId});
+        Clientes.remove({_id: clientesId});
+        return dados;
     }
 });

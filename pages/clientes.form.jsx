@@ -52,11 +52,21 @@ ClientesForm = React.createClass({
             $('#formClienteForm :input[name=empresa]').focus();
         }
 
-            this.setState({
-                erro: '',
-                sucesso: 'Cliente salvo com sucesso.',
-                exibeAviso: true
-            });
+        this.setState({
+            erro: '',
+            sucesso: 'Cliente salvo com sucesso.',
+            exibeAviso: true
+        });
+    },
+
+    excluirCadastro(event) {
+        event.preventDefault();
+
+        if(confirm('Deseja mesmo excluir cadastro?')){
+            this.data.cliente = Meteor.call('clientesExcluir', this.props.clientesId);
+            $('#formClienteForm :input, .btn').attr('disabled',true);
+            FlowRouter.go('/clientes/listar');
+        }
     },
 
     render() {
@@ -72,7 +82,12 @@ ClientesForm = React.createClass({
                 {this.state.exibeAviso?
                     <Alert bsStyle={this.state.erro!=''? 'danger' : 'success'}>{this.state.erro!=''? this.state.erro : this.state.sucesso}</Alert>
                 :
-                    ''
+                    null
+                }
+                {this.props.clientesId? 
+                    <a className="btn-excluir" href="#" onClick={this.excluirCadastro}><i className="fa fa-trash fa-2x" /></a>
+                :
+                    null
                 }
                 <form id="formClienteForm" method="post" onSubmit={this.salvarDados}>
                     <Grid fluid={true}>
@@ -94,5 +109,6 @@ ClientesForm = React.createClass({
 
     componentDidMount(){
         $('#formClienteForm :input[name=empresa]').focus();
+        $('#formClienteForm :input[name=telefones]').mask('(99) 9999-9999?9');
     }
 });
