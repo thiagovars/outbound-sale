@@ -70,9 +70,10 @@ ClientesForm = React.createClass({
     },
 
     render() {
+        let btnVoltar = (<a href={this.props.clientesId? "/clientes/listar" : "/"} className="btn btn-voltar btn-block"><i className="fa fa-chevron-left"></i> Voltar</a>);
         let btnAction = (
             <Row>
-                <Col xs={6} md={6}><a href="/" className="btn btn-voltar btn-block"><i className="fa fa-chevron-left"></i> Voltar</a></Col>
+                <Col xs={6} md={6}>{btnVoltar}</Col>
                 <Col xs={6} md={6}><Input type="submit" value="Salvar" className="btn-salvar btn-block" /></Col>
             </Row>
         );
@@ -86,15 +87,16 @@ ClientesForm = React.createClass({
                 }
                 <form id="formClienteForm" method="post" onSubmit={this.salvarDados}>
                     <Grid fluid={true}>
-                        {this.props.clientesId? 
-                            <Row>
-                                <Col md={12} style={{textAlign: 'right'}} >
+                        <Row style={{marginBottom: '35px'}}>
+                            <Col xs={6}>{btnVoltar}</Col>
+                            {this.props.clientesId? 
+                                <Col xs={6} style={{textAlign: 'right'}} >
                                     <a className="btn-excluir" href="#" onClick={this.excluirCadastro}><i className="fa fa-trash fa-2x" /></a>
                                 </Col>
-                            </Row>
-                        :
-                            null
-                        }
+                            :
+                                null
+                            }
+                        </Row>
                         <Row>
                             <Col md={12}> <Input type="text" label="Nome da Empresa" name="empresa" defaultValue={this.data.cliente.empresa} placeholder="Empresa" /> </Col>
                         </Row>
@@ -102,7 +104,22 @@ ClientesForm = React.createClass({
                             <Col md={12}> <Input type="text" label="Dona/Sócia (o)" name="responsavel" defaultValue={this.data.cliente.responsavel} placeholder="Responsável" /> </Col>
                         </Row>
                         <Row>
-                            <Col md={8}> <Input type="text" label="Telefones" name="telefones" defaultValue={this.data.cliente.telefones} placeholder="Telefones" /> </Col>
+                            <Col md={12}> <Input type="text" label="Telefones" name="telefones" defaultValue={this.data.cliente.telefones} placeholder="Telefones" /> </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}> <Input type="text" label="E-mail" name="email" defaultValue={this.data.cliente.email} placeholder="E-mail" /> </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}> <Input type="text" label="Endereço" name="endereco" defaultValue={this.data.cliente.endereco} placeholder="Endereço" /> </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}> <Input type="textarea" row="7" label="Observações" name="observacoes" defaultValue={this.data.cliente.observacoes} placeholder="Observações" /> </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}> <Input type="textarea" row="10" label="Desafios Explícitos" name="desafios_explicitos" defaultValue={this.data.cliente.desafios_explicitos} placeholder="Desafios Explícitos" /> </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12}> <Input type="textarea" row="10" label="Desafios Implícitos" name="desafios_implicitos" defaultValue={this.data.cliente.desafios_implicitos} placeholder="Desafios Implícitos" /> </Col>
                         </Row>
                         {btnAction}
                     </Grid>
