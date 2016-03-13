@@ -84,13 +84,17 @@ ClientesForm = React.createClass({
                 :
                     null
                 }
-                {this.props.clientesId? 
-                    <a className="btn-excluir" href="#" onClick={this.excluirCadastro}><i className="fa fa-trash fa-2x" /></a>
-                :
-                    null
-                }
                 <form id="formClienteForm" method="post" onSubmit={this.salvarDados}>
                     <Grid fluid={true}>
+                        {this.props.clientesId? 
+                            <Row>
+                                <Col md={12} style={{textAlign: 'right'}} >
+                                    <a className="btn-excluir" href="#" onClick={this.excluirCadastro}><i className="fa fa-trash fa-2x" /></a>
+                                </Col>
+                            </Row>
+                        :
+                            null
+                        }
                         <Row>
                             <Col md={12}> <Input type="text" label="Nome da Empresa" name="empresa" defaultValue={this.data.cliente.empresa} placeholder="Empresa" /> </Col>
                         </Row>
