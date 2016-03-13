@@ -10,9 +10,6 @@ Stats = React.createClass({
         var color = 'stats alert alert-'+this.props.color;
         var icon = 'stats-icon fa fa-4x fa-'+this.props.icon;
         var lnk_class = 'lnk alert-'+this.props.color;
-        if(typeof this.props.urlLink == 'undefined'){
-            this.props.urlLink = '#';
-        }
         return (
             <div className={color}>
                 {typeof this.props.urlLink != 'undefined'?
